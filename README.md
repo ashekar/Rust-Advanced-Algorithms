@@ -1,2 +1,2 @@
 # Rust-Algorithms
-Algorithms in Rust
+Algorithms in Rust & Go
