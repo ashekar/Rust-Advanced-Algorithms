@@ -6,22 +6,53 @@ fn main() {
     let mut args: Args = args();
     let first = args.nth(1).unwrap();
     let first_number: i32= first.parse::<i32>().unwrap();
-    /*
-    let operator = args.nth(0).unwrap().chars().next().unwrap();
+
     let second = args.nth(0).unwrap();
+    let second_number: i32 = second.parse::<i32>().unwrap();
 
 
-    let second_number: f32 = second.parse::<f32>().unwrap();
+    let result: i32 = euclideanAlgorithm(first_number, second_number);
 
-
-    let result = operate(operator, first_number, second_number);
-    */
-
-    let result: i32 = nthFibonacciNumber(first_number);
+   
 
     println!("{:?}", result);
 
 } 
+
+fn euclideanAlgorithm(number_one: i32, number_two: i32) -> i32{
+    if number_one == 0{
+        return number_two;
+    }else if number_two == 0{
+        return number_one;
+    }
+
+    if number_one > number_two{
+        return euclideanAlgorithm(number_one % number_two, number_two);
+    }else{
+        return euclideanAlgorithm(number_two % number_one, number_one);
+    }
+
+}
+
+fn primalityTest(number: i32) -> bool{
+    let mut i: i32 = 2;
+    while i < number{
+        if number % i == 0{
+            return false;
+        }
+        i = i + 1;
+    }
+    return true;
+}
+
+fn factorial(number: i32) -> i32{
+    if number == 1{
+        1
+    }else{
+        number * factorial(number - 1)
+    }
+    
+}
 
 fn nthFibonacciNumber(index: i32) -> i32{
    
