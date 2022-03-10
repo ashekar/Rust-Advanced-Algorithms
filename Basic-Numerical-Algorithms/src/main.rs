@@ -17,7 +17,9 @@ fn main() {
 
     println!("{:?}", result);
 
-} 
+}
+
+
 
 fn euclideanAlgorithm(number_one: i32, number_two: i32) -> i32{
     if number_one == 0{
